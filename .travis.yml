@@ -1,0 +1,10 @@
+branches:
+  only: [deploy]
+env:
+  global: {secure: XyGX/hjnhmXRRLoB4rmNDaYnCn6u9RARzWxxWRrKz4bbB+vbouOJp3Y96qb98jkBwKMp4pE09Cm8w7/cfaH9gIiLMUC3I6vR4mnRKJOhaRl7P6662f3XxQqEYjKOHxEh8VW+PcCnIjFRiHXF0Iq4qKlzcRp8Q+AENfJASRaQdZY=}
+install: ['wget https://github.com/getnikola/wheelhouse/archive/v2.7.zip', unzip v2.7.zip,
+  pip install --use-wheel --no-index --find-links=wheelhouse-2.7 lxml Pillow, rm -rf
+    wheelhouse-2.7 v2.7.zip, pip install nikola webassets]
+language: python
+python: ['2.7']
+script: bash travis_build_n_deploy.sh
